@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Filament\Pages\Tenancy;
+namespace App\Filament\App\Pages\Tenancy;
 
-use App\Models\Team;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Pages\Tenancy\RegisterTenant;
+use Filament\Pages\Tenancy\EditTenantProfile;
 use Illuminate\Database\Eloquent\Model;
 
-class RegisterTeam extends RegisterTenant
+class EditTeamProfile extends EditTenantProfile
 {
       public static function getLabel(): string
       {
-            return 'Register team';
+            return 'Team profile';
       }
 
       public function form(Form $form): Form
@@ -22,14 +21,5 @@ class RegisterTeam extends RegisterTenant
                         TextInput::make('name'),
                         TextInput::make('slug'),
                   ]);
-      }
-
-      protected function handleRegistration(array $data): Team
-      {
-            $team = Team::create($data);
-
-            $team->members()->attach(auth()->user());
-
-            return $team;
       }
 }
