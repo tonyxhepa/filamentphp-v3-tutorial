@@ -1,1 +1,1 @@
-<img src="{{ asset('/images/logo-transparent.png') }}" alt="Logo" class="h-10">
+<img src="{{ asset('/images/kitsys.png') }}" alt="Logo" class="h-10">
